@@ -73,7 +73,7 @@ async function promptUser() {
 }
 
 function saveSVG(svgContent) {
-  fs.writeFile("images/logo.svg", svgContent, (err) => {
+  fs.writeFile("logo.svg", svgContent, (err) => {
     if (err) throw err;
     console.log("Generated logo.svg");
   });
