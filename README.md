@@ -30,4 +30,4 @@ https://github.com/S10skeleton/Shanes-SVG-LogoMaker
 
 ## Sample of created Logo
 
-![screenshot](./Images/Screenshot)
+![screenshot](./Example%20and%20Images/Screenshot.png)
