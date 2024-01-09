@@ -18,3 +18,16 @@ WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 ## Descrpition 
+
+This is a simple command line interface application that will create a simple logo based 
+on input criteria. User can enter up to 3 letters, choose the color of the text and 
+background as well as choose between 3 shapes (circle, square, triangle). This will 
+create a file called Logo.svg which can be opened in the browser
+
+## Github Repo link
+
+https://github.com/S10skeleton/Shanes-SVG-LogoMaker
+
+## Sample of created Logo
+
+![screenshot](./Images/Screenshot)

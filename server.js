@@ -1,4 +1,3 @@
-// server.mjs or ensure "type": "module" is in package.json
 import fs from "fs";
 import inquirer from "inquirer";
 
@@ -13,10 +12,26 @@ class Logo {
 
 class SVGGenerator {
   static createSVG(logo) {
-    // Implement logic based on logo's shape, color, and text to generate SVG content
-    return `<svg width="300" height="200">...</svg>`;
+    let shapeSVG = '';
+
+    switch (logo.shape) {
+      case 'circle':
+        shapeSVG = `<circle cx="150" cy="100" r="80" fill="${logo.shapeColor}" />`;
+        break;
+      case 'square':
+        shapeSVG = `<rect x="50" y="50" width="200" height="200" fill="${logo.shapeColor}" />`;
+        break;
+      case 'triangle':
+        shapeSVG = `<polygon points="150,40 250,160 50,160" fill="${logo.shapeColor}" />`;
+        break;
+    }
+
+    const textSVG = `<text x="150" y="115" font-family="Verdana" font-size="35" fill="${logo.textColor}" text-anchor="middle">${logo.text}</text>`;
+
+    return `<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">${shapeSVG}${textSVG}</svg>`;
   }
 }
+
 
 async function promptUser() {
   const questions = [
@@ -31,7 +46,6 @@ async function promptUser() {
       type: "input",
       name: "textColor",
       message: "Enter the color for the text (color keyword or hex code):",
-      // Adjust validation as necessary
     },
     {
       type: "list",
@@ -43,7 +57,6 @@ async function promptUser() {
       type: "input",
       name: "shapeColor",
       message: "Enter the color for the shape (color keyword or hex code):",
-      // Adjust validation as necessary
     },
   ];
 
@@ -60,10 +73,10 @@ async function promptUser() {
 }
 
 function saveSVG(svgContent) {
-  fs.writeFile("logo.svg", svgContent, (err) => {
+  fs.writeFile("images/logo.svg", svgContent, (err) => {
     if (err) throw err;
     console.log("Generated logo.svg");
   });
 }
 
-promptUser(); // Don't forget to call your function!
+promptUser();
