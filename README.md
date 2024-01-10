@@ -1,5 +1,9 @@
 # Shanes-SVG-LogoMaker
 
+## Video of APP in action 
+
+https://drive.google.com/file/d/1C7eESThe1sJc_Fo3_ZKoFlFGSJ0uXQ9a/view 
+
 ## Examples 
 
 https://github.com/S10skeleton/Shanes-SVG-LogoMaker/blob/main/Example%20and%20Images/logoS1.svg
