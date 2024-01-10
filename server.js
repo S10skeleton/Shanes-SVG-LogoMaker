@@ -1,6 +1,8 @@
+// import needed modules 
 import fs from "fs";
 import inquirer from "inquirer";
 
+// set up the Logo basics 
 class Logo {
   constructor(text, textColor, shape, shapeColor) {
     this.text = text;
@@ -10,6 +12,7 @@ class Logo {
   }
 }
 
+// Created the needed logic for generating the svg 
 class SVGGenerator {
   static createSVG(logo) {
     let shapeSVG = '';
@@ -32,7 +35,7 @@ class SVGGenerator {
   }
 }
 
-
+// Created the needed command prompts 
 async function promptUser() {
   const questions = [
     {
@@ -71,7 +74,7 @@ async function promptUser() {
   const svgContent = SVGGenerator.createSVG(logo);
   saveSVG(svgContent);
 }
-
+// Created the function to write and create the svg file 
 function saveSVG(svgContent) {
   fs.writeFile("logo.svg", svgContent, (err) => {
     if (err) throw err;
